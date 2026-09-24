@@ -36,8 +36,17 @@ function renderBooks() {
   bookList.innerHTML = visibleBooks.length
     ? visibleBooks.map((book) => `
       <article class="book-card">
-        <h4 class="book-title">${book.title}</h4>
-        <p class="book-meta">${book.author} · ${book.category}</p>
+        <div>
+          <h4 class="book-title">${book.title}</h4>
+          <p class="book-meta">${book.author} · ${book.category}</p>
+          <span class="status ${book.copies - book.borrowed ? "available" : "out"}">
+            ${book.copies - book.borrowed ? `${book.copies - book.borrowed} of ${book.copies} available` : "All copies are on loan"}
+          </span>
+        </div>
+        <div class="card-actions">
+          <button class="button button-secondary button-small" data-action="issue" data-id="${book.id}" ${book.borrowed >= book.copies ? "disabled" : ""}>Issue</button>
+          <button class="button button-ghost button-small" data-action="return" data-id="${book.id}" ${book.borrowed === 0 ? "disabled" : ""}>Return</button>
+        </div>
       </article>
     `).join("")
     : '<div class="empty-state">No books match the current filters.</div>';
@@ -59,3 +68,22 @@ categoryFilter.addEventListener("change", renderBooks);
 renderCategories();
 renderBooks();
 renderStats();
+
+bookList.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-action]");
+  if (!button) return;
+
+  const book = books.find((item) => item.id === Number(button.dataset.id));
+  if (!book) return;
+
+  if (button.dataset.action === "issue" && book.borrowed < book.copies) {
+    book.borrowed += 1;
+  }
+
+  if (button.dataset.action === "return" && book.borrowed > 0) {
+    book.borrowed -= 1;
+  }
+
+  renderBooks();
+  renderStats();
+});

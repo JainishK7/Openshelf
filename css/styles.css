@@ -186,3 +186,44 @@ body {
     width: 100%;
   }
 }
+
+.status {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.status.available { color: var(--green); background: #ecfdf3; }
+.status.out { color: var(--red); background: #fef3f2; }
+
+.book-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.button:disabled { cursor: not-allowed; opacity: .45; }
+.button-secondary { background: #eef2ff; color: #253aa3; }
+.button-ghost { background: transparent; color: var(--muted); }
+.button-small { padding: 8px 10px; }
+
+@media (max-width: 700px) {
+  .book-card { grid-template-columns: 1fr; }
+}
