@@ -75,6 +75,21 @@ The **Add a book** form adds a catalogue entry. If the title already exists, the
 
 Use **Export data** to download the current browser state as JSON and **Reset demo** to restore the sample catalogue.
 
+## Library Workflow
+
+OpenShelf is designed around a simple catalogue workflow:
+
+| Action | Purpose |
+|---|---|
+| Search / Filter | Find books by title, author, or category. |
+| Issue | Record a book issue and reduce its available copies. |
+| Return | Record a return and restore an available copy. |
+| Add a book | Add a new title or increase copies of an existing title. |
+| Export data | Download the current catalogue state as JSON. |
+| Reset demo | Restore the original demonstration catalogue. |
+
+These actions can be used directly from the browser without a backend or external database.
+
 ## Validation
 
 Run the lightweight checks before submitting a pull request:
@@ -105,3 +120,4 @@ See [SECURITY.md](SECURITY.md) for reporting guidance.
 ## License
 
 OpenShelf is released under the MIT License. See [LICENSE](LICENSE).
+
