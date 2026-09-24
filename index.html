@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OpenShelf is a lightweight browser-based library catalogue.">
+  <title>OpenShelf | Library Catalogue</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">OS</div>
+      <div>
+        <p class="brand-kicker">Library Catalogue</p>
+        <h1>OpenShelf</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <span class="eyebrow">Open Source Technologies</span>
+      <h2>A simple library desk in your browser.</h2>
+      <p>OpenShelf is a small front-end demonstration for browsing and tracking a library collection.</p>
+    </section>
+
+    <section class="stats-grid" aria-label="Library statistics">
+      <article class="stat-card"><span>Total copies</span><strong id="totalBooks">0</strong></article>
+      <article class="stat-card"><span>Available now</span><strong id="availableBooks">0</strong></article>
+      <article class="stat-card"><span>Books on loan</span><strong id="activeLoans">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">Collection</span>
+          <h3>Books</h3>
+        </div>
+      </div>
+      <div id="bookList" class="book-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>OpenShelf is an educational demonstration project.</span>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
