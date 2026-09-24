@@ -149,3 +149,40 @@ body {
   .stats-grid { grid-template-columns: 1fr; }
   .page-shell { width: min(94vw, 1050px); }
 }
+
+.input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+}
+
+.input:focus {
+  outline: 3px solid rgba(49, 94, 251, .12);
+  border-color: var(--accent);
+}
+
+.filters {
+  display: flex;
+  width: min(430px, 100%);
+  gap: 8px;
+}
+
+.empty-state {
+  padding: 26px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+@media (max-width: 700px) {
+  .panel-heading,
+  .filters {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+}
