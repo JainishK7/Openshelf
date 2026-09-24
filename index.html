@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OpenShelf is a lightweight browser-based library catalogue.">
+  <meta name="description" content="OpenShelf is a small browser-based library catalogue and lending tracker.">
   <title>OpenShelf | Library Catalogue</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,10 +12,11 @@
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">OS</div>
       <div>
-        <p class="brand-kicker">Library Catalogue</p>
+        <p class="brand-kicker">Open Source Technologies</p>
         <h1>OpenShelf</h1>
       </div>
     </div>
+
     <div class="header-actions">
       <button id="exportBtn" class="button button-secondary" type="button">Export data</button>
       <button id="resetBtn" class="button button-ghost" type="button">Reset demo</button>
@@ -24,36 +25,87 @@
 
   <main class="page-shell">
     <section class="hero">
-      <span class="eyebrow">Open Source Technologies</span>
-      <h2>A simple library desk in your browser.</h2>
-      <p>OpenShelf is a small front-end demonstration for browsing and tracking a library collection.</p>
+      <div>
+        <span class="eyebrow">Library catalogue</span>
+        <h2>A small, practical library desk in your browser.</h2>
+        <p>Search the collection, issue or return books, and add new titles. OpenShelf keeps the demonstration data in your browser so the project can run without a backend.</p>
+      </div>
+      <div class="hero-note">
+        <strong>No server required</strong>
+        <span>HTML · CSS · JavaScript · localStorage</span>
+      </div>
     </section>
 
-    <section class="stats-grid" aria-label="Library statistics">
+    <section class="stats-grid" aria-label="Library overview">
       <article class="stat-card"><span>Total copies</span><strong id="totalBooks">0</strong></article>
       <article class="stat-card"><span>Available now</span><strong id="availableBooks">0</strong></article>
       <article class="stat-card"><span>Books on loan</span><strong id="activeLoans">0</strong></article>
+      <article class="stat-card"><span>Titles in catalogue</span><strong id="titleCount">0</strong></article>
     </section>
 
-    <section class="panel">
-      <div class="panel-heading">
-        <div>
-          <span class="eyebrow">Collection</span>
-          <h3>Books</h3>
+    <section class="workspace">
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">Collection</span>
+            <h3>Books</h3>
+          </div>
+          <div class="filters">
+            <input id="searchInput" class="input" type="search" placeholder="Search title or author" aria-label="Search title or author">
+            <select id="categoryFilter" class="input" aria-label="Filter by category">
+              <option value="all">All categories</option>
+            </select>
+          </div>
         </div>
-        <div class="filters">
-          <input id="searchInput" class="input" type="search" placeholder="Search title or author" aria-label="Search title or author">
-          <select id="categoryFilter" class="input" aria-label="Filter by category">
-            <option value="all">All categories</option>
-          </select>
-        </div>
+
+        <div id="bookList" class="book-list" aria-live="polite"></div>
       </div>
-      <div id="bookList" class="book-list" aria-live="polite"></div>
+
+      <aside class="side-column">
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">Catalogue maintenance</span>
+              <h3>Add a book</h3>
+            </div>
+          </div>
+
+          <form id="bookForm" class="form-grid">
+            <label>Title<input class="input" name="title" maxlength="80" required></label>
+            <label>Author<input class="input" name="author" maxlength="80" required></label>
+            <label>Category
+              <select class="input" name="category">
+                <option>Technology</option>
+                <option>Fiction</option>
+                <option>Non-fiction</option>
+                <option>Science</option>
+                <option>History</option>
+              </select>
+            </label>
+            <label>Copies<input class="input" name="copies" type="number" min="1" max="50" value="1" required></label>
+            <button class="button button-primary" type="submit">Add to catalogue</button>
+          </form>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading compact">
+            <div>
+              <span class="eyebrow">Activity</span>
+              <h3>Recent changes</h3>
+            </div>
+          </div>
+          <div id="activityList" class="activity-list" aria-live="polite"></div>
+        </section>
+      </aside>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>OpenShelf is an educational demonstration project.</span>
+    <span>OpenShelf is an educational open-source demonstration project.</span>
+    <a href="docs/architecture.md">Architecture</a>
+    <a href="docs/development.md">Development</a>
+    <a href="CONTRIBUTING.md">Contributing</a>
   </footer>
 
   <script src="js/app.js" defer></script>
