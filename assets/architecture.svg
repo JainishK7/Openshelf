@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="440" viewBox="0 0 980 440">
+  <rect width="980" height="440" fill="#f8fafc"/>
+  <rect x="60" y="45" width="250" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="185" y="85" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#1f2937">Browser</text>
+  <text x="185" y="115" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">index.html + styles.css</text>
+  <text x="185" y="140" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">search · forms · catalogue UI</text>
+
+  <rect x="365" y="45" width="250" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="490" y="85" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#1f2937">Application Logic</text>
+  <text x="490" y="115" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">js/app.js</text>
+  <text x="490" y="140" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">state · events · rendering</text>
+
+  <rect x="670" y="45" width="250" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="795" y="85" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#1f2937">Storage</text>
+  <text x="795" y="115" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">browser localStorage</text>
+  <text x="795" y="140" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">catalogue persistence</text>
+
+  <line x1="310" y1="102" x2="365" y2="102" stroke="#315efb" stroke-width="4"/>
+  <polygon points="365,102 351,94 351,110" fill="#315efb"/>
+  <line x1="615" y1="102" x2="670" y2="102" stroke="#315efb" stroke-width="4"/>
+  <polygon points="670,102 656,94 656,110" fill="#315efb"/>
+
+  <rect x="215" y="250" width="550" height="115" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="490" y="287" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#1f2937">Repository Quality Checks</text>
+  <text x="490" y="317" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">GitHub Actions → npm test + npm run validate</text>
+  <text x="490" y="343" text-anchor="middle" font-family="Arial" font-size="15" fill="#667085">runs on pushes and pull requests</text>
+
+  <line x1="490" y1="160" x2="490" y2="250" stroke="#64748b" stroke-width="3"/>
+  <polygon points="490,250 482,236 498,236" fill="#64748b"/>
+</svg>
