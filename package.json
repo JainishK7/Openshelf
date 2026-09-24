@@ -1,0 +1,11 @@
+{
+  "name": "openshelf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A lightweight browser-based library catalogue and lending tracker.",
+  "scripts": {
+    "test": "node tests/smoke-test.mjs",
+    "validate": "node scripts/validate-repo.mjs",
+    "check": "npm test && npm run validate"
+  }
+}
